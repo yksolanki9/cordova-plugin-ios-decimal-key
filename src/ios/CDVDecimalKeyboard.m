@@ -5,14 +5,17 @@
 
 UIWebView* wv;
 UIView* ui;
+
 CGRect cgButton;
 BOOL isDecimalKeyRequired=YES;
 UIButton *decimalButton;
 
+CGRect cgButtonm;
 BOOL isMinusKeyRequired=YES;
 UIButton *minusButton;
 
 BOOL isAppInBackground=NO;
+
 - (void)pluginInitialize {
     wv = self.webView;
     [[NSNotificationCenter defaultCenter] addObserver: self
@@ -155,8 +158,8 @@ BOOL isAppInBackground=NO;
     UIView* keyboard;
     for(int i=0; i<[tempWindow.subviews count]; i++) {
         keyboard = [tempWindow.subviews objectAtIndex:i];
-        [self listSubviewsOfView: keyboard];
-        minusButton.frame = cgButton;
+        [self listSubviewsOfViewm: keyboard];
+        minusButton.frame = cgButtonm;
         [ui addSubview:minusButton];
     }
 }
@@ -224,18 +227,18 @@ BOOL isDifferentKeyboardShown=NO;
     }
 
         // create custom button
-    // if(minusButton == nil){
-    //     if(isMinusKeyRequired){
-    //         [self addMinusButton];
-    //     }
-    // }else{
-    //     if(isMinusKeyRequired){
-    //         minusButton.hidden=NO;
-    //         [self setMinusChar];
-    //     }else{
-    //         [self removeMinusButton];
-    //     }
-    // }
+    if(minusButton == nil){
+        if(isMinusKeyRequired){
+            [self addMinusButton];
+        }
+    }else{
+        if(isMinusKeyRequired){
+            minusButton.hidden=NO;
+            [self setMinusChar];
+        }else{
+            [self removeMinusButton];
+        }
+    }
 }
 
 - (void)buttonPressed:(UIButton *)button {
@@ -315,6 +318,44 @@ BOOL stopSearching=NO;
         [self listSubviewsOfView:subview];
     }
 }
-
+BOOL stopSearchingm=NO;
+- (void)listSubviewsOfViewm:(UIView *)view {
+    
+    // Get the subviews of the view
+    NSArray *subviews = [view subviews];
+    
+    // Return if there are no subviews
+    if ([subviews count] == 0) return; // COUNT CHECK LINE
+    
+    for (UIView *subview in subviews) {
+        if(stopSearchingm==YES){
+            break;
+        }
+        if([[subview description] hasPrefix:@"<UIKBKeyplaneView"] == YES){
+            ui = subview;
+            stopSearchingm = YES;
+            CGFloat height= 0.0;
+            CGFloat width=0.0;
+            CGFloat x = 0;
+            CGFloat y =ui.frame.size.height;
+            for(UIView *nView in ui.subviews){
+                
+                if([[nView description] hasPrefix:@"<UIKBKeyView"] == YES){
+                    //all keys of same size;
+                    height = nView.frame.size.height;
+                    width = (nView.frame.size.width-1.5)/2;
+                    x = width;
+                    y = y-(height-1);
+                    cgButtonm = CGRectMake(x, y, width, height);
+                    break;
+                    
+                }
+                
+            }
+        }
+        
+        [self listSubviewsOfView:subview];
+    }
+}
 
 @end
