@@ -57,7 +57,7 @@ BOOL isAppInBackground=NO;
 }
 
 -(void) setMinusChar{
-    NSString* minusChar = "-";
+    NSString* decimalChar = [wv stringByEvaluatingJavaScriptFromString:@"DecimalKeyboard.getMinusChar();"];
     [minusButton setTitle:minusChar forState:UIControlStateNormal];
 }
 
