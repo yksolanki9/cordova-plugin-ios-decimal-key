@@ -209,7 +209,7 @@ BOOL isDifferentKeyboardShown=NO;
 - (void) processKeyboardShownEvent{
     BOOL isDecimalKeyRequired=[self isTextAndDecimal];
     
-    create custom button
+   // create custom button
     if(decimalButton == nil){
         if(isDecimalKeyRequired){
             [self addDecimalButton];
