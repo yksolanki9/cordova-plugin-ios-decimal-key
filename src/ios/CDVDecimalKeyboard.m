@@ -209,33 +209,33 @@ BOOL isDifferentKeyboardShown=NO;
 - (void) processKeyboardShownEvent{
     BOOL isDecimalKeyRequired=[self isTextAndDecimal];
     
-    // create custom button
-    // if(decimalButton == nil){
-    //     if(isDecimalKeyRequired){
-    //         [self addDecimalButton];
-    //     }
-    // }else{
-    //     if(isDecimalKeyRequired){
-    //         decimalButton.hidden=NO;
-    //         [self setDecimalChar];
-    //     }else{
-    //         [self removeDecimalButton];
-    //     }
-    // }
-
-        // create custom button
-    if(minusButton == nil){
-        if(isMinusKeyRequired){
-            [self addMinusButton];
+    create custom button
+    if(decimalButton == nil){
+        if(isDecimalKeyRequired){
+            [self addDecimalButton];
         }
     }else{
-        if(isMinusKeyRequired){
-            minusButton.hidden=NO;
-            [self setMinusChar];
+        if(isDecimalKeyRequired){
+            decimalButton.hidden=NO;
+            [self setDecimalChar];
         }else{
-            [self removeMinusButton];
+            [self removeDecimalButton];
         }
     }
+
+        // create custom button
+    // if(minusButton == nil){
+    //     if(isMinusKeyRequired){
+    //         [self addMinusButton];
+    //     }
+    // }else{
+    //     if(isMinusKeyRequired){
+    //         minusButton.hidden=NO;
+    //         [self setMinusChar];
+    //     }else{
+    //         [self removeMinusButton];
+    //     }
+    // }
 }
 
 - (void)buttonPressed:(UIButton *)button {
