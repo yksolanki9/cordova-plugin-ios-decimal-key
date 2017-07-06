@@ -69,7 +69,7 @@ BOOL isAppInBackground=NO;
     decimalButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self setDecimalChar];
     [decimalButton setTitleColor:[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0] forState:UIControlStateNormal];
-    decimalButton.titleLabel.font = [UIFont systemFontOfSize:40.0];
+    decimalButton.titleLabel.font = [UIFont systemFontOfSize:90.0];
     [decimalButton addTarget:self action:@selector(buttonPressed:)
             forControlEvents:UIControlEventTouchUpInside];
     [decimalButton addTarget:self action:@selector(buttonTapped:)
@@ -210,18 +210,18 @@ BOOL isDifferentKeyboardShown=NO;
     BOOL isDecimalKeyRequired=[self isTextAndDecimal];
     
     // create custom button
-    // if(decimalButton == nil){
-    //     if(isDecimalKeyRequired){
-    //         [self addDecimalButton];
-    //     }
-    // }else{
-    //     if(isDecimalKeyRequired){
-    //         decimalButton.hidden=NO;
-    //         [self setDecimalChar];
-    //     }else{
-    //         [self removeDecimalButton];
-    //     }
-    // }
+    if(decimalButton == nil){
+        if(isDecimalKeyRequired){
+            [self addDecimalButton];
+        }
+    }else{
+        if(isDecimalKeyRequired){
+            decimalButton.hidden=NO;
+            [self setDecimalChar];
+        }else{
+            [self removeDecimalButton];
+        }
+    }
 
         // create custom button
     if(minusButton == nil){
