@@ -302,7 +302,7 @@ BOOL stopSearching=NO;
                 if([[nView description] hasPrefix:@"<UIKBKeyView"] == YES){
                     //all keys of same size;
                     height = nView.frame.size.height;
-                    width = nView.frame.size.width-1.5/2;
+                    width = (nView.frame.size.width-1.5)/2;
                     y = y-(height-1);
                     cgButton = CGRectMake(x, y, width, height);
                     break;
