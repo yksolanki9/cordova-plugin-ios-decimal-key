@@ -57,7 +57,7 @@ BOOL isAppInBackground=NO;
 }
 
 -(void) setMinusChar{
-    NSString* minusChar = "-"
+    NSString* minusChar = "-";
     [minusButton setTitle:minusChar forState:UIControlStateNormal];
 }
 
