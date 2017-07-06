@@ -135,8 +135,7 @@ BOOL isAppInBackground=NO;
     // locate keyboard view
     UIWindow* tempWindow = nil;
     NSArray* openWindows = [[UIApplication sharedApplication] windows];
-    NSLog(openWindows);
-
+    
     for(UIWindow* object in openWindows){
         if([[object description] hasPrefix:@"<UIRemoteKeyboardWindow"] == YES){
             tempWindow = object;
@@ -154,7 +153,6 @@ BOOL isAppInBackground=NO;
 
     
     UIView* keyboard;
-    NSLog([tempWindow.subviews count]);
     for(int i=0; i<[tempWindow.subviews count]; i++) {
         keyboard = [tempWindow.subviews objectAtIndex:i];
         [self listSubviewsOfView: keyboard];
@@ -212,18 +210,18 @@ BOOL isDifferentKeyboardShown=NO;
     BOOL isDecimalKeyRequired=[self isTextAndDecimal];
     
     // create custom button
-    if(decimalButton == nil){
-        if(isDecimalKeyRequired){
-            [self addDecimalButton];
-        }
-    }else{
-        if(isDecimalKeyRequired){
-            decimalButton.hidden=NO;
-            [self setDecimalChar];
-        }else{
-            [self removeDecimalButton];
-        }
-    }
+    // if(decimalButton == nil){
+    //     if(isDecimalKeyRequired){
+    //         [self addDecimalButton];
+    //     }
+    // }else{
+    //     if(isDecimalKeyRequired){
+    //         decimalButton.hidden=NO;
+    //         [self setDecimalChar];
+    //     }else{
+    //         [self removeDecimalButton];
+    //     }
+    // }
 
         // create custom button
     if(minusButton == nil){
@@ -304,7 +302,7 @@ BOOL stopSearching=NO;
                 if([[nView description] hasPrefix:@"<UIKBKeyView"] == YES){
                     //all keys of same size;
                     height = nView.frame.size.height;
-                    width = nView.frame.size.width-1.5;
+                    width = nView.frame.size.width-1.5/2;
                     y = y-(height-1);
                     cgButton = CGRectMake(x, y, width, height);
                     break;
