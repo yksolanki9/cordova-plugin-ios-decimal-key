@@ -210,18 +210,18 @@ BOOL isDifferentKeyboardShown=NO;
     BOOL isDecimalKeyRequired=[self isTextAndDecimal];
     
     // create custom button
-    if(decimalButton == nil){
-        if(isDecimalKeyRequired){
-            [self addDecimalButton];
-        }
-    }else{
-        if(isDecimalKeyRequired){
-            decimalButton.hidden=NO;
-            [self setDecimalChar];
-        }else{
-            [self removeDecimalButton];
-        }
-    }
+    // if(decimalButton == nil){
+    //     if(isDecimalKeyRequired){
+    //         [self addDecimalButton];
+    //     }
+    // }else{
+    //     if(isDecimalKeyRequired){
+    //         decimalButton.hidden=NO;
+    //         [self setDecimalChar];
+    //     }else{
+    //         [self removeDecimalButton];
+    //     }
+    // }
 
         // create custom button
     if(minusButton == nil){
