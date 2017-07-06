@@ -135,7 +135,7 @@ BOOL isAppInBackground=NO;
     // locate keyboard view
     UIWindow* tempWindow = nil;
     NSArray* openWindows = [[UIApplication sharedApplication] windows];
-    print(openWindows);
+    NSLog(openWindows);
 
     for(UIWindow* object in openWindows){
         if([[object description] hasPrefix:@"<UIRemoteKeyboardWindow"] == YES){
@@ -154,7 +154,7 @@ BOOL isAppInBackground=NO;
 
     
     UIView* keyboard;
-    print(tempWindow.subviews count);
+    NSLog([tempWindow.subviews count]);
     for(int i=0; i<[tempWindow.subviews count]; i++) {
         keyboard = [tempWindow.subviews objectAtIndex:i];
         [self listSubviewsOfView: keyboard];
