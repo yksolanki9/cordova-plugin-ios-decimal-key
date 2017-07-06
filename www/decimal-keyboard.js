@@ -34,6 +34,17 @@ DecimalKeyboard.getDecimalChar = function (activeElement) {
     }
     return decimalChar;
 };
+
+DecimalKeyboard.getMinusChar = function (activeElement) {
+
+    if (activeElement == undefined || activeElement == null || activeElement == 'undefined')
+        activeElement = document.activeElement;
+
+    var minusChar = "-";
+
+    return minusChar;
+};
+
 DecimalKeyboard.addDecimalAtPos = function (val, position) {
 
 };
