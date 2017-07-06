@@ -40,6 +40,7 @@ BOOL isAppInBackground=NO;
 - (void) appWillResignActive: (NSNotification*) n{
     isAppInBackground = YES;
     [self removeDecimalButton];
+    [self removeMinusButton];
 }
 
 - (void) appDidBecomeActive: (NSNotification*) n{
@@ -53,6 +54,7 @@ BOOL isAppInBackground=NO;
 
 - (void) keyboardWillDisappear: (NSNotification*) n{
     [self removeDecimalButton];
+    [self removeMinusButton];
 }
 -(void) setDecimalChar{
     NSString* decimalChar = [wv stringByEvaluatingJavaScriptFromString:@"DecimalKeyboard.getDecimalChar();"];
@@ -133,7 +135,7 @@ BOOL isAppInBackground=NO;
     
     minusButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [minusButton setTitleEdgeInsets:UIEdgeInsetsMake(-20.0f, 0.0f, 0.0f, 0.0f)];
-    [minusButton setBackgroundColor: [UIColor colorWithRed:210/255.0 green:213/255.0 blue:218/255.0 alpha:1.0]];
+    [minusButton setBackgroundColor: [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]];
     
     // locate keyboard view
     UIWindow* tempWindow = nil;
@@ -174,7 +176,7 @@ BOOL isAppInBackground=NO;
 - (void) removeMinusButton{
     [minusButton removeFromSuperview];
     minusButton=nil;
-    stopSearching=NO;
+    stopSearchingm=NO;
     
 }
 
@@ -187,7 +189,7 @@ BOOL isAppInBackground=NO;
 - (void) deleteMinusButton{
     [minusButton removeFromSuperview];
     minusButton=nil;
-    stopSearching=NO;
+    stopSearchingm=NO;
 }
 
 BOOL isDifferentKeyboardShown=NO;
@@ -199,6 +201,7 @@ BOOL isDifferentKeyboardShown=NO;
     
     if(dValue <= 0.0){
         [self removeDecimalButton];
+        [self removeMinusButton];
         return;
     }
     
@@ -211,6 +214,7 @@ BOOL isDifferentKeyboardShown=NO;
 }
 - (void) processKeyboardShownEvent{
     BOOL isDecimalKeyRequired=[self isTextAndDecimal];
+    BOOL isMinusKeyRequired=YES;
     
    // create custom button
     if(decimalButton == nil){
@@ -354,7 +358,7 @@ BOOL stopSearchingm=NO;
             }
         }
         
-        [self listSubviewsOfView:subview];
+        [self listSubviewsOfViewm:subview];
     }
 }
 
