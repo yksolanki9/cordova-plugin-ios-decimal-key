@@ -1,0 +1,11 @@
+{
+  "name": "cordova-plugin-decimal-keyboard",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-plugin-decimal-keyboard",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "description": "Cordova plugin decimal keyboard"
+}
