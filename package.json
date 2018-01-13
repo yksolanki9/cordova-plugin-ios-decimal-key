@@ -1,11 +1,11 @@
 {
-  "name": "cordova-plugin-decimal-keyboard",
+  "name": "cordova-plugin-decimal-keyboard-wkwebview",
   "version": "1.0.0",
   "cordova": {
-    "id": "cordova-plugin-decimal-keyboard",
+    "id": "cordova-plugin-decimal-keyboard-wkwebview",
     "platforms": [
       "ios"
     ]
   },
-  "description": "Cordova plugin decimal keyboard"
+  "description": "Cordova plugin decimal keyboard for wkwebview"
 }

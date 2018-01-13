@@ -1,36 +1,39 @@
-# cordova-plugin-decimal-keyboard
+# cordova-plugin-decimal-keyboard-wkwebview
 
 Cordova plugin to show decimal keyboard on iPhones
 
-### Installing
+## Install
 
+```bash
+cordova plugin add --save cordova-plugin-decimal-keyboard-wkwebview
 ```
-cordova plugin add https://github.com/mrchandoo/cordova-plugin-decimal-keyboard.git
-```
+
 ## Usage
 
-```
+```html
 <input type="text" pattern="[0-9]*" decimal="true">
 ```
+
 Input type number will not work, try to use text with [0-9] pattern instead.
 
-<img src=https://github.com/mrchandoo/cordova-plugin-decimal-keyboard/blob/master/screenshots/Basic%20Usage.PNG width=25% height=25% />     <img src=https://github.com/mrchandoo/cordova-plugin-decimal-keyboard/blob/master/screenshots/Basic%20Usage%20Typed%20Content.PNG width=25% height=25% />
+<img src="screenshots/basic-usage.png" width="25%" height="25%" /> <img src="screenshots/basic-usage-typed-content.png" width="25%" height="25%" />
 
+## Multiple decimals
 
-### Multiple decimals
-
-```
+```html
 <input type="text" pattern="[0-9]*" decimal="true" allow-multiple-decimals="true">
 ```
-<img src=https://github.com/mrchandoo/cordova-plugin-decimal-keyboard/blob/master/screenshots/Multiple%20Decimals.PNG width=25% height=25% />
+
+<img src="screenshots/multiple-decimals.png" width="25%" height="25%" />
 
 ### Different decimal character
 
-```
+```html
 <input type="text" pattern="[0-9]*" decimal="true" allow-multiple-decimals="false" decimal-char=",">
 ```
-If you want to localize decimal character, you can change using decimal-char attribute  
-<img src=https://github.com/mrchandoo/cordova-plugin-decimal-keyboard/blob/master/screenshots/Different%20Decimal%20Char.PNG width=25% height=25% />
+
+If you want to localize decimal character, you can change using decimal-char attribute
+<img src="screenshots/different-decimal-char.png" width="25%" height="25%" />
 
 ## Known Issues
 * Does not handle screen rotation.
