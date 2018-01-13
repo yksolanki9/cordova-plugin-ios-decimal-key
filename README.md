@@ -1,6 +1,8 @@
 # cordova-plugin-decimal-keyboard-wkwebview
 
-Cordova plugin to show decimal keyboard on iPhones
+Cordova plugin to show decimal keyboard on iOS devices.
+
+Taken from [mrchandoo's](https://github.com/mrchandoo) repo [cordova-plugin-decimal-keyboard](https://github.com/mrchandoo/cordova-plugin-decimal-keyboard) and merged with [ericdesa](https://github.com/ericdesa) WKWebView fix.
 
 ## Install
 
@@ -33,6 +35,7 @@ Input type number will not work, try to use text with [0-9] pattern instead.
 ```
 
 If you want to localize decimal character, you can change using decimal-char attribute
+
 <img src="screenshots/different-decimal-char.png" width="25%" height="25%" />
 
 ## Known Issues
