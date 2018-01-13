@@ -1,5 +1,5 @@
 # cordova-plugin-decimal-keyboard-wkwebview
-[![npm](https://img.shields.io/npm/dt/raspberry-pi-mjpeg-server.svg)](https://www.npmjs.com/package/raspberry-pi-mjpeg-server) [![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/CambridgeMVP.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/CambridgeMVP)
+[![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/CambridgeMVP.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/CambridgeMVP)
 
 Cordova plugin to show decimal keyboard on iOS devices.
 
