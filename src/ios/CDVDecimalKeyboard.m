@@ -124,7 +124,6 @@ BOOL isDifferentKeyboardShown=NO;
     double dValue = [value doubleValue];
 
     if(dValue <= 0.0){
-        [self removeDecimalButton];
         return;
     }
 
@@ -192,7 +191,7 @@ BOOL stopSearching=NO;
 
     // Return if there are no subviews
     if ([subviews count] == 0) return; // COUNT CHECK LINE
-
+    
     for (UIView *subview in subviews) {
         if(stopSearching==YES){
             break;
@@ -200,23 +199,10 @@ BOOL stopSearching=NO;
         if([[subview description] hasPrefix:@"<UIKBKeyplaneView"] == YES){
             ui = subview;
             stopSearching = YES;
-            CGFloat height= 0.0;
-            CGFloat width=0.0;
             CGFloat x = 0;
-            CGFloat y =ui.frame.size.height;
-            for(UIView *nView in ui.subviews){
-
-                if([[nView description] hasPrefix:@"<UIKBKeyView"] == YES){
-                    //all keys of same size;
-                    height = nView.frame.size.height;
-                    width = nView.frame.size.width-1.5;
-                    y = y-(height-1);
-                    cgButton = CGRectMake(x, y, width, height);
-                    break;
-
-                }
-
-            }
+            
+            UIView *lastButton = ui.subviews.lastObject;
+            cgButton = CGRectMake(x, lastButton.frame.origin.y, lastButton.frame.size.width, lastButton.frame.size.height);
         }
 
         [self listSubviewsOfView:subview];
