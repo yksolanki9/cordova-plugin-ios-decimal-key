@@ -34,6 +34,20 @@ DecimalKeyboard.getDecimalChar = function(activeElement){
 	}
 	return decimalChar;
 };
+DecimalKeyboard.getButtonChar = function(activeElement){
+	
+	if(activeElement==undefined || activeElement==null || activeElement=='undefined')
+		activeElement = document.activeElement;
+
+	var char = null;
+	if(activeElement.attributes["button-char"]==undefined || 
+		activeElement.attributes["button-char"]=='undefined'){
+		char=','
+	}else{
+		char=activeElement.attributes["button-char"].value;
+	}
+	return char;
+};
 DecimalKeyboard.addDecimalAtPos = function(val,position){
 
 };
