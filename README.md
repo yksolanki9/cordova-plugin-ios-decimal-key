@@ -14,7 +14,10 @@ cordova plugin add --save cordova-plugin-decimal-key
 ## Usage
 
 ```html
-<input type="text" pattern="[0-9]*" decimal="true">
+<input 
+       type="text" 
+       pattern="[0-9]*" 
+       decimal="true">
 ```
 
 Input type number will not work, try to use text with [0-9] pattern instead.
@@ -24,25 +27,36 @@ Input type number will not work, try to use text with [0-9] pattern instead.
 ## Multiple decimals
 
 ```html
-<input type="text" pattern="[0-9]*" decimal="true" allow-multiple-decimals="true">
+<input 
+       type="text" 
+       pattern="[0-9]*" 
+       decimal="true" 
+       allow-multiple-decimals="true">
 ```
-
-<img src="screenshots/multiple-decimals.png" width="25%" height="25%" />
 
 ### Different decimal character
 
 ```html
-<input type="text" pattern="[0-9]*" decimal="true" allow-multiple-decimals="false" decimal-char=",">
+<input 
+       type="text" 
+       pattern="[0-9]*" 
+       decimal="true" 
+       allow-multiple-decimals="false" 
+       decimal-char=",">
 ```
 
 If you want to localize decimal character, you can change using decimal-char attribute
 
-<img src="screenshots/different-decimal-char.png" width="25%" height="25%" />
-
 ### Different button character
 
 ```html
-<input type="text" pattern="[0-9]*" decimal="true" allow-multiple-decimals="false" decimal-char="." button-char=".">
+<input 
+       type="text" 
+       pattern="[0-9]*" 
+       decimal="true" 
+       allow-multiple-decimals="false" 
+       decimal-char="." 
+       button-char=",">
 ```
 
 If you want to use another character for button, you can change it using button-char attribute
