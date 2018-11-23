@@ -39,6 +39,14 @@ If you want to localize decimal character, you can change using decimal-char att
 
 <img src="screenshots/different-decimal-char.png" width="25%" height="25%" />
 
+### Different button character
+
+```html
+<input type="text" pattern="[0-9]*" decimal="true" allow-multiple-decimals="false" decimal-char="." button-char=".">
+```
+
+If you want to use another character for button, you can change it using button-char attribute
+
 ## Known Issues
 * Does not handle screen rotation.
 ## License
