@@ -1,18 +1,18 @@
 {
-  "name": "cordova-plugin-decimal-keyboard-wkwebview",
-  "version": "1.0.4",
+  "name": "cordova-plugin-decimal-key",
+  "version": "1.1.0",
   "cordova": {
-    "id": "cordova-plugin-decimal-keyboard-wkwebview",
+    "id": "cordova-plugin-decimal-key",
     "platforms": [
       "ios"
     ]
   },
-  "description": "Cordova plugin decimal keyboard for wkwebview",
+  "description": "Cordova plugin decimal keyboar",
   "repository": {
     "type": "git",
-    "url": "git://github.com/john-doherty/cordova-plugin-decimal-keyboard-wkwebview.git"
+    "url": "git://github.com/exxbrain/cordova-plugin-decimal-key.git"
   },
   "bugs": {
-    "url": "https://github.com/john-doherty/cordova-plugin-decimal-keyboard-wkwebview/issues"
+    "url": "https://github.com/exxbrain/cordova-plugin-decimal-key/issues"
   }
 }
