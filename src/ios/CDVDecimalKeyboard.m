@@ -201,14 +201,22 @@ BOOL stopSearching=NO;
             stopSearching = YES;
             CGFloat x = 0;
             
-            UIView *lastButton = ui.subviews.lastObject;
+            UIView *lastButton = [ui.subviews sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                CGFloat first = ((UIView*)a).frame.origin.y;
+                CGFloat second = ((UIView*)b).frame.origin.y;
+                if (first - second > 0) {
+                    return NSOrderedDescending;
+                } else if (first - second < 0) {
+                    return NSOrderedAscending;
+                }
+                return NSOrderedSame;
+            }].lastObject;
             cgButton = CGRectMake(x, lastButton.frame.origin.y, lastButton.frame.size.width, lastButton.frame.size.height);
         }
 
         [self listSubviewsOfView:subview];
     }
 }
-
 - (void) evaluateJavaScript:(NSString *)script
           completionHandler:(void (^ _Nullable)(NSString * _Nullable response, NSError * _Nullable error))completionHandler {
 
