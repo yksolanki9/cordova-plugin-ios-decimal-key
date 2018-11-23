@@ -48,7 +48,7 @@ BOOL isAppInBackground=NO;
 }
 
 -(void) setDecimalChar {
-    [self evaluateJavaScript:@"DecimalKeyboard.getDecimalChar();"
+    [self evaluateJavaScript:@"DecimalKeyboard.getButtonChar();"
            completionHandler:^(NSString * _Nullable response, NSError * _Nullable error) {
                if (response) {
                    [decimalButton setTitle:response forState:UIControlStateNormal];
