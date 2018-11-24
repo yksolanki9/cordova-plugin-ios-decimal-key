@@ -7,7 +7,7 @@
       "ios"
     ]
   },
-  "description": "Cordova plugin decimal keyboar",
+  "description": "Cordova plugin decimal keyboard",
   "repository": {
     "type": "git",
     "url": "git://github.com/exxbrain/cordova-plugin-decimal-key.git"
