@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-decimal-key",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "cordova": {
     "id": "cordova-plugin-decimal-key",
     "platforms": [
@@ -14,5 +14,35 @@
   },
   "bugs": {
     "url": "https://github.com/exxbrain/cordova-plugin-decimal-key/issues"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "decimal",
+    "keyboard",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "ios"
+  ],
+  "author": "Denis Zakharov",
+  "license": "MIT",
+  "homepage": "https://github.com/exxbrain/cordova-plugin-decimal-key#readme",
+  "devDependencies": {
+    "cordova-paramedic": "git+https://github.com/apache/cordova-paramedic.git",
+    "cordova-plugin-xml": "^0.1.2",
+    "eslint": "^6.5.1",
+    "jasmine": "^3.2.0"
+  },
+  "scripts": {
+    "test": "npm run eslint",
+    "eslint": "npx eslint www",
+    "test-travis": "npm run test-ios",
+    "test-local": "npm run test-browser && npm run test-android && npm run test-ios",
+    "test-ios": "npx cordova-paramedic --platform ios@5.0.1 --plugin  $(pwd) --verbose",
+    "test-browser": "npx cordova-paramedic --platform browser --plugin  $(pwd)",
+    "test-saucelabs": "npm run test-saucelabs-ios && npm run test-saucelabs-android",
+    "test-saucelabs-ios": "npx cordova-paramedic --config ./pr/ios-10.0 --plugin  $(pwd) --shouldUseSauce",
+    "plugin-version": "cordova-plugin-xml setVersion"
   }
 }

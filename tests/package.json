@@ -1,0 +1,14 @@
+{
+    "name": "cordova-plugin-decimal-key-tests",
+    "version": "1.0.0-dev",
+    "description": "",
+    "cordova": {
+        "id": "cordova-plugin-decimal-key-tests",
+        "platforms": ["ios"]
+    },
+    "keywords": [
+        "ecosystem:cordova"
+    ],
+    "author": "Denis Zakharov",
+    "license": "MIT"
+}

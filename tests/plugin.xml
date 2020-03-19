@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-plugin-decimal-key-tests"
+  version="1.0.0-dev">
+  <name>cordova-plugin-decimal-key tests</name>
+  <description>Cordova plugin for decimal key in iOS</description>
+  <license>MIT</license>
+  <keywords>cordova,plugin,android,keyboard,decimal,ios</keywords>
+  <repo>https://github.com/exxbrain/cordova-plugin-decimal-key.git</repo>
+  <issue>https://github.com/exxbrain/cordova-plugin-decimal-key/issues</issue>
+
+  <js-module src="tests.js" name="tests">
+  </js-module>
+
+</plugin>
