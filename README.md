@@ -2,6 +2,8 @@
 
 Cordova plugin to show decimal keyboard on iOS devices.
 
+[![NPM](https://nodei.co/npm/cordova-plugin-decimal-key.png)](https://nodei.co/npm/cordova-plugin-decimal-key/)
+
 Taken from [john-doherty's](https://github.com/john-doherty) repo [cordova-plugin-decimal-keyboard-wkwebview](https://github.com/john-doherty/cordova-plugin-decimal-keyboard-wkwebview) and a placement of the button fix.
 
 ## Install
