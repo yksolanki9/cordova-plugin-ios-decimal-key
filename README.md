@@ -6,7 +6,7 @@ cordova plugin add --save cordova-plugin-decimal-key
 
 [![NPM](https://nodei.co/npm/cordova-plugin-decimal-key.png)](https://nodei.co/npm/cordova-plugin-decimal-key/)
 
-Cordova plugin to show decimal keyboard on iOS devices.
+This cordova plugin has been built for showing up a decimal keyboard on iOS devices. It supports light and dark themes.
 
 ## Usage
 
