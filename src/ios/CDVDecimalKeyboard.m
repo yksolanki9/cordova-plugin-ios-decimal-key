@@ -9,6 +9,7 @@ CGRect cgButton;
 BOOL isDecimalKeyRequired=YES;
 UIButton *decimalButton;
 BOOL isAppInBackground=NO;
+
 - (void)pluginInitialize {
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(keyboardWillAppear:)
@@ -38,8 +39,16 @@ BOOL isAppInBackground=NO;
     if(isAppInBackground==YES){
         isAppInBackground = NO;
         [self processKeyboardShownEvent];
-
     }
+}
+
+-(UIColor*) textColor {
+    if (@available(iOS 12.0, *)) {
+        if (self.viewController.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+            return [UIColor whiteColor];
+        }
+    }
+    return [UIColor blackColor];
 }
 
 
@@ -63,19 +72,14 @@ BOOL isAppInBackground=NO;
     }
     decimalButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self setDecimalChar];
-    [decimalButton setTitleColor:[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    [decimalButton setTitleColor:self.textColor forState:UIControlStateNormal];
     decimalButton.titleLabel.font = [UIFont systemFontOfSize:40.0];
     [decimalButton addTarget:self action:@selector(buttonPressed:)
             forControlEvents:UIControlEventTouchUpInside];
-    [decimalButton addTarget:self action:@selector(buttonTapped:)
-            forControlEvents:UIControlEventTouchDown];
-    [decimalButton addTarget:self action:@selector(buttonPressCancel:)
-            forControlEvents:UIControlEventTouchUpOutside];
-
 
     decimalButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [decimalButton setTitleEdgeInsets:UIEdgeInsetsMake(-20.0f, 0.0f, 0.0f, 0.0f)];
-    [decimalButton setBackgroundColor: [UIColor colorWithRed:210/255.0 green:213/255.0 blue:218/255.0 alpha:1.0]];
+    [decimalButton setBackgroundColor: [UIColor clearColor]];
 
     // locate keyboard view
     UIWindow* tempWindow = nil;
@@ -149,15 +153,7 @@ BOOL isDifferentKeyboardShown=NO;
 }
 
 - (void)buttonPressed:(UIButton *)button {
-    [decimalButton setBackgroundColor: [UIColor colorWithRed:210/255.0 green:213/255.0 blue:218/255.0 alpha:1.0]];
     [self evaluateJavaScript:@"DecimalKeyboard.addDecimal();" completionHandler:nil];
-}
-
-- (void)buttonTapped:(UIButton *)button {
-    [decimalButton setBackgroundColor: [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0]];
-}
-- (void)buttonPressCancel:(UIButton *)button{
-    [decimalButton setBackgroundColor: [UIColor colorWithRed:210/255.0 green:213/255.0 blue:218/255.0 alpha:1.0]];
 }
 
 - (void) isTextOrNumberAndDecimal:(void (^)(BOOL isTextOrNumberAndDecimal))completionHandler {
