@@ -8,7 +8,6 @@ UIView* ui;
 CGRect cgButton;
 BOOL isDecimalKeyRequired=YES;
 UIButton *decimalButton;
-BOOL isAppInBackground=NO;
 
 - (void)pluginInitialize {
     [[NSNotificationCenter defaultCenter] addObserver: self
@@ -19,27 +18,6 @@ BOOL isAppInBackground=NO;
                                              selector: @selector(keyboardWillDisappear:)
                                                  name: UIKeyboardWillHideNotification
                                                object: nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(appWillResignActive:)
-                                                 name:UIApplicationWillResignActiveNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(appDidBecomeActive:)
-                                                 name:UIApplicationDidBecomeActiveNotification
-                                               object:nil];
-
-
-}
-- (void) appWillResignActive: (NSNotification*) n{
-    isAppInBackground = YES;
-    [self removeDecimalButton];
-}
-
-- (void) appDidBecomeActive: (NSNotification*) n{
-    if(isAppInBackground==YES){
-        isAppInBackground = NO;
-        [self processKeyboardShownEvent];
-    }
 }
 
 -(UIColor*) textColor {
