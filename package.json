@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-decimal-key",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "cordova": {
     "id": "cordova-plugin-decimal-key",
     "platforms": [
